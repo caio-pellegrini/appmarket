@@ -10,11 +10,11 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  final titulo = 'ManiaX';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ManiaX',
+      title: titulo,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
@@ -37,8 +37,8 @@ class _HomePageState extends State<HomePage> {
   int _paginaAtual = 0;
 
   final List<Widget> _paginas = [
-    const Placeholder(),
-    const Placeholder(),
+    const LojasPage(),
+    const ProdutosPage(),
     const Placeholder(),
     const Placeholder(),
   ];
