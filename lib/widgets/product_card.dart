@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:appmarket/models/product_model.dart';
 
-class ProdutoCard extends StatelessWidget {
+class ProdutoCard extends StatefulWidget {
   final Produto produto;
 
   const ProdutoCard({
@@ -9,6 +9,11 @@ class ProdutoCard extends StatelessWidget {
     required this.produto
   });
 
+  @override
+  State<ProdutoCard> createState() => _ProdutoCardState();
+}
+
+class _ProdutoCardState extends State<ProdutoCard> {
   @override
   Widget build(BuildContext build) {
     return Card(
@@ -29,7 +34,7 @@ class ProdutoCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    produto.nome,
+                    widget.produto.nome,
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -37,7 +42,7 @@ class ProdutoCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    produto.barcode,
+                    widget.produto.barcode,
                     style: const TextStyle(
                       color: Colors.black54,
                       fontSize: 14,
@@ -48,15 +53,15 @@ class ProdutoCard extends StatelessWidget {
             ),
             IconButton(
                   icon: Icon(
-                    produto.isFavorite
+                    widget.produto.isFavorite
                         ? Icons.favorite
                         : Icons.favorite_border,
-                    color: produto.isFavorite ? Colors.red : Colors.grey,
+                    color: widget.produto.isFavorite ? Colors.red : Colors.grey,
                   ),
                   onPressed: () {
-                    //setState(() {
-                    //  produto.isFavorite = !produto.isFavorite;
-                    //});
+                    setState(() {
+                      widget.produto.isFavorite = !widget.produto.isFavorite;
+                    });
                   },
                 ),
           ],
@@ -67,20 +72,20 @@ class ProdutoCard extends StatelessWidget {
 
   Widget _buildImagePlaceholder() {
     const double imageSize = 50.0;
-    bool hasImage = produto.imageUrl != null && produto.imageUrl!.isNotEmpty;
+    bool hasImage = widget.produto.imageUrl != null && widget.produto.imageUrl!.isNotEmpty;
 
     return Container(
       width: 50.0,
       height: 50.0,
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: hasImage
       ? ClipRRect(
         borderRadius: BorderRadius.circular(8.0),
         child: Image.network(
-          produto.imageUrl!,
+          widget.produto.imageUrl!,
           fit: BoxFit.cover,
           loadingBuilder: (context, child, loadingProgress) {
             if (loadingProgress == null) return child;
@@ -89,14 +94,14 @@ class ProdutoCard extends StatelessWidget {
           errorBuilder: (context, error, StackTrace) {
             return const Icon(
               Icons.no_photography_outlined,
-              color: Colors.white,  
+              color: Colors.black,  
             );
           },
         )
       )
       : const Icon(
         Icons.no_photography_outlined,
-        color: Colors.white,
+        color: Colors.black,
       )
     );
   }

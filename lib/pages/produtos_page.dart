@@ -40,38 +40,37 @@ class _ProdutosPageState extends State<ProdutosPage> {
     Produto(
       nome: 'Leite Italac Integral 1L',
       barcode: '7896036097066',
-      isFavorite: false,
-      imageUrl: 'http://www.eanpictures.com.br:9000/api/gtin/7896036097066',
+      isFavorite: true,
+      imageUrl: 'https://cdn-cosmos.bluesoft.com.br/products/7898080640611',
     ),
     Produto(
       nome: 'Pão de Forma Pullman Tradicional 500g',
       barcode: '7896004000029',
       isFavorite: false,
-      imageUrl: 'http://www.eanpictures.com.br:9000/api/gtin/7896004000029',
+      imageUrl: 'https://cdn-cosmos.bluesoft.com.br/products/7896002302197',
     ),
     Produto(
       nome: 'Banana Prata - kg',
       barcode: '7890000000013',
       isFavorite: false,
-      imageUrl: 'http://www.eanpictures.com.br:9000/api/gtin/7890000000013',
     ),
     Produto(
       nome: 'Peito de Frango Congelado Seara 1kg',
       barcode: '7898495380003',
       isFavorite: false,
-      imageUrl: 'http://www.eanpictures.com.br:9000/api/gtin/7898495380003',
+      imageUrl: 'https://cdn-cosmos.bluesoft.com.br/products/7894904015108',
     ),
     Produto(
-      nome: 'Lasanha Bolonhesa Sadia 600g',
+      nome: 'Lasanha Bolonhesa Sadia 350g',
       barcode: '7893000511515',
       isFavorite: false,
-      imageUrl: 'http://www.eanpictures.com.br:9000/api/gtin/7893000511515',
+      imageUrl: 'https://cdn-cosmos.bluesoft.com.br/products/7893000674233',
     ),
     Produto(
       nome: 'Ração Pedigree Cães Adultos 1kg',
       barcode: '7896029070245',
       isFavorite: false,
-      imageUrl: 'http://www.eanpictures.com.br:9000/api/gtin/7896029070245',
+      imageUrl: 'https://cdn-cosmos.bluesoft.com.br/products/7896029053270',
     ),
   ];
 
@@ -82,22 +81,6 @@ class _ProdutosPageState extends State<ProdutosPage> {
         : _todosOsProdutos;
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.menu, color: Colors.black),
-        ), // colorir icone
-        title: const Text('ManiaX', style: TextStyle(color: Colors.black)),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.account_circle_outlined, color: Colors.black),
-          ),
-        ],
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
 

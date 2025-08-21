@@ -39,13 +39,30 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _paginas = [
     const LojasPage(),
     const ProdutosPage(),
-    const Placeholder(),
-    const Placeholder(),
+    const SaldoPage(),
+    const HistoricoPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.menu, color: Colors.black),
+        ), // colorir icone
+        title: const Text('ManiaX', style: TextStyle(color: Colors.black)),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.account_circle_outlined, color: Colors.black),
+          ),
+        ],
+      ),
+
       body: _paginas[_paginaAtual],
 
       bottomNavigationBar: BottomNavigationBar(
