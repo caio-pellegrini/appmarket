@@ -27,7 +27,7 @@ class LojasPage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final loja = lojas[index];
                   return Card(
-                    color: Colors.grey[200],
+                    color: Theme.of(context).colorScheme.primaryContainer,
                     margin: const EdgeInsets.only(bottom: 16.0),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),

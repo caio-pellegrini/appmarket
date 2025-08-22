@@ -32,7 +32,7 @@ class HistoricoPage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final compra = _historicoDeCompras[index];
                   // Chamamos nosso widget customizado para cada item
-                  return _buildHistoricoCard(compra);
+                  return _buildHistoricoCard(compra, context);
                 },
               ),
             ),
@@ -43,7 +43,7 @@ class HistoricoPage extends StatelessWidget {
   }
 
   // Widget auxiliar para construir cada card do histórico
-  Widget _buildHistoricoCard(Compra compra) {
+  Widget _buildHistoricoCard(Compra compra, BuildContext context) {
     // Formatador para a data e hora
     final DateFormat formatadorData = DateFormat('dd/MM/yyyy \'às\' HH:mm');
 
@@ -53,7 +53,7 @@ class HistoricoPage extends StatelessWidget {
       },
       child: Card(
         elevation: 0,
-        color: Colors.grey[200],
+        color: Theme.of(context).colorScheme.primaryContainer,
         margin: const EdgeInsets.only(bottom: 12.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.0),
@@ -71,17 +71,26 @@ class HistoricoPage extends StatelessWidget {
                     children: [
                       Text(
                         compra.quantidadeItens.toString(),
-                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18),
                       ),
                       const SizedBox(width: 10),
-                      const Icon(Icons.shopping_cart, color: Colors.black54),
+                      Icon(
+                        Icons.shopping_cart,
+                        color: Theme.of(context).colorScheme.primary
+                      ),
                     ],
                   ),
                   const SizedBox(height: 4),
                   // Preço
                   Text(
                     'R\$ ${compra.preco.toStringAsFixed(2).replaceAll('.', ',')}',
-                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
                 ],
               ),

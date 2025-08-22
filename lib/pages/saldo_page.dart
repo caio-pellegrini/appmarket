@@ -18,14 +18,14 @@ class SaldoPage extends StatelessWidget {
               ),
               const SizedBox(height: 16),
 
-              _buildSaldoCard(),
+              _buildSaldoCard(context),
 
               const SizedBox(height: 16),
               
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey[300],
+                  backgroundColor: Theme.of(context).colorScheme.primaryFixedDim,
                   foregroundColor: Colors.black,
                   elevation: 0,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -41,14 +41,14 @@ class SaldoPage extends StatelessWidget {
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 16.0),
-              _buildCartaoCard('Visa', '**** **** **** 4172'),
-              _buildCartaoCard('Mastercard', '**** **** **** 9054'),
+              _buildCartaoCard('Visa', '**** **** **** 4172', context),
+              _buildCartaoCard('Mastercard', '**** **** **** 9054', context),
               const SizedBox(height: 16.0),
 
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey[300],
+                  backgroundColor: Theme.of(context).colorScheme.primaryFixedDim,
                   foregroundColor: Colors.black,
                   elevation: 0,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -66,10 +66,10 @@ class SaldoPage extends StatelessWidget {
   }
 }
 
-Widget _buildSaldoCard() {
+Widget _buildSaldoCard(context) {
   return Card(
     elevation: 0,
-    color: Colors.grey[200],
+    color: Theme.of(context).colorScheme.primaryContainer,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
              
     child: Padding(
@@ -103,10 +103,10 @@ Widget _buildSaldoCard() {
   );
 }
 
-Widget _buildCartaoCard(String bandeira, String numero) {
+Widget _buildCartaoCard(String bandeira, String numero, BuildContext context) {
   return Card(
     elevation: 0,
-    color: Colors.grey[200],
+    color: Theme.of(context).colorScheme.primaryContainer,
     margin: const EdgeInsets.only(bottom: 12.0),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
     child: ListTile(

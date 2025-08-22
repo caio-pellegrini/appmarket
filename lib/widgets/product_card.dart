@@ -17,7 +17,7 @@ class _ProdutoCardState extends State<ProdutoCard> {
   @override
   Widget build(BuildContext build) {
     return Card(
-      color: Colors.grey[200],
+      color: Theme.of(context).colorScheme.primaryContainer,
       elevation: 0, // remove sombra
       margin: const EdgeInsets.only(bottom: 12.0),
       shape: RoundedRectangleBorder(
