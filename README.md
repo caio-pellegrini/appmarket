@@ -1,16 +1,45 @@
-# appmarket
+# AppMarket
 
-A new Flutter project.
+## Visão Geral
 
-## Getting Started
+AppMarket é um protótipo de aplicativo de mini-mercado desenvolvido em Flutter. Este projeto educacional simula as funcionalidades essenciais de um aplicativo de varejo, permitindo aos usuários visualizar lojas e produtos, gerenciar saldo e acompanhar o histórico de compras.
 
-This project is a starting point for a Flutter application.
+## Estrutura do Projeto
 
-A few resources to get you started if this is your first Flutter project:
+O código-fonte está organizado da seguinte forma:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+  * **`lib/`**: Código Dart da aplicação.
+      * **`pages/`**: Telas do aplicativo (Lojas, Produtos, Saldo, Histórico).
+      * **`models/`**: Classes de modelo de dados (Produto, Loja, Compra).
+      * **`widgets/`**: Componentes de UI reutilizáveis.
+      * **`mock/`**: Dados simulados para popular o aplicativo.
+  * **`android/`**, **`ios/`**, etc.: Arquivos de configuração específicos de cada plataforma.
+  * **`pubspec.yaml`**: Definição das dependências do projeto.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Como Reproduzir o Projeto
+
+### Pré-requisitos
+
+  * [Flutter SDK](https://flutter.dev/docs/get-started/install) instalado.
+  * Um editor de código como VS Code ou Android Studio.
+
+### Passos
+
+1.  **Clonar o Repositório:**
+
+    ```bash
+    git clone https://github.com/caio-pellegrini/appmarket.git
+    cd appmarket
+    ```
+
+2.  **Instalar Dependências:**
+
+    ```bash
+    flutter pub get
+    ```
+
+3.  **Executar o App:**
+
+    ```bash
+    flutter run
+    ```
