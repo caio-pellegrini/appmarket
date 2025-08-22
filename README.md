@@ -16,6 +16,10 @@ O código-fonte está organizado da seguinte forma:
   * **`android/`**, **`ios/`**, etc.: Arquivos de configuração específicos de cada plataforma.
   * **`pubspec.yaml`**: Definição das dependências do projeto.
 
+## Figma
+
+![Figma](/figma.jpg)
+
 ## Como Reproduzir o Projeto
 
 ### Pré-requisitos
