@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
     const LojasPage(),
     const ProdutosPage(),
     const SaldoPage(),
-    const HistoricoPage(),
+    HistoricoPage(),
   ];
 
   @override

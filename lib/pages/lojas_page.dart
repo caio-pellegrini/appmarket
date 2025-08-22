@@ -24,11 +24,17 @@ class LojasPage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Card(
                     color: Colors.grey[200],
-                    margin: const EdgeInsets.only(bottom: 12.0),
-                    child: ListTile(
-                      leading: const Icon(Icons.storefront),
-                      title: Text('Loja ${index + 1}'),
-                      onTap: () {},
+                    margin: const EdgeInsets.only(bottom: 16.0),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ListTile(
+                        leading: const Icon(Icons.storefront),
+                        title: Text(
+                          'Loja ${index + 1}',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        onTap: () {},
+                      ),
                     ),
                   );
                 },
