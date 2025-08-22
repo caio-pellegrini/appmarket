@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:appmarket/mock/mock_lojas.dart';
 
 class LojasPage extends StatelessWidget {
-  const LojasPage({super.key});
+  LojasPage({super.key});
+
+  final lojas = mockLojas;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +23,9 @@ class LojasPage extends StatelessWidget {
             const SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
-                itemCount: 3,
+                itemCount: lojas.length,
                 itemBuilder: (context, index) {
+                  final loja = lojas[index];
                   return Card(
                     color: Colors.grey[200],
                     margin: const EdgeInsets.only(bottom: 16.0),
@@ -30,7 +34,7 @@ class LojasPage extends StatelessWidget {
                       child: ListTile(
                         leading: const Icon(Icons.storefront),
                         title: Text(
-                          'Loja ${index + 1}',
+                          loja.nome,
                           style: TextStyle(fontSize: 16),
                         ),
                         onTap: () {},

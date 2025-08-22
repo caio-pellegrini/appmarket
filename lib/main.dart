@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
   int _paginaAtual = 0;
 
   final List<Widget> _paginas = [
-    const LojasPage(),
+    LojasPage(),
     const ProdutosPage(),
     const SaldoPage(),
     HistoricoPage(),
