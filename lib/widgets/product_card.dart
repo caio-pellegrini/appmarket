@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:appmarket/models/product_model.dart';
+import 'package:appmarket/models/produto_model.dart';
 
 class ProdutoCard extends StatefulWidget {
   final Produto produto;
@@ -71,7 +71,6 @@ class _ProdutoCardState extends State<ProdutoCard> {
   }
 
   Widget _buildImagePlaceholder() {
-    const double imageSize = 50.0;
     bool hasImage = widget.produto.imageUrl != null && widget.produto.imageUrl!.isNotEmpty;
 
     return Container(

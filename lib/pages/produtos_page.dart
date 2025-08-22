@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:appmarket/models/product_model.dart';
+import 'package:appmarket/models/produto_model.dart';
 import 'package:appmarket/widgets/product_card.dart';
-import 'package:appmarket/mock/mock_produtos.dart';
+import 'package:appmarket/mock/produtos_mock.dart';
 
 class ProdutosPage extends StatefulWidget {
   const ProdutosPage({super.key});

@@ -1,4 +1,4 @@
-import 'package:appmarket/models/product_model.dart';
+import 'package:appmarket/models/produto_model.dart';
 
 final List<Produto> mockProdutos = [
     Produto(

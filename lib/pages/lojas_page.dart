@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:appmarket/mock/mock_lojas.dart';
+import 'package:appmarket/mock/lojas_mock.dart';
 
 class LojasPage extends StatelessWidget {
   LojasPage({super.key});
