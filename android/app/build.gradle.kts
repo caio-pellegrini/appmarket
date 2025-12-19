@@ -42,3 +42,7 @@ android {
 flutter {
     source = "../.."
 }
+
+dependencies {
+    androidTestImplementation("tools.fastlane:screengrab:2.1.1")
+}

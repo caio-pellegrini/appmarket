@@ -1,0 +1,90 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Submit a new Beta Build to Crashlytics Beta"
+  lane :beta do
+    gradle(task: "clean assembleRelease")
+    crashlytics
+  
+    # sh "your_script.sh"
+    # You can also use other beta testing services here
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+    gradle(task: "clean assembleRelease")
+    upload_to_play_store
+  end
+
+  desc "Tirar screenshots com Flutter e organizar para a Play Store"
+  lane :screenshots do
+    # ============================================
+    # CONFIGURAÇÕES
+    # ============================================
+    emulator_name = "pixel5"
+    
+    pasta_fastlane = File.expand_path(File.dirname(__FILE__))
+    pasta_raiz_projeto = File.expand_path("../..", pasta_fastlane)
+    origem_prints = File.join(pasta_raiz_projeto, "screenshots")
+    destino_prints = File.join(pasta_fastlane, "metadata/android/pt-BR/images/phoneScreenshots")
+
+    puts "📂 Raiz do projeto: #{pasta_raiz_projeto}"
+    puts "📂 Origem dos prints: #{origem_prints}"
+    puts "📂 Destino dos prints: #{destino_prints}"
+
+    # ============================================
+    # EXECUÇÃO
+    # ============================================
+    puts "📱 Iniciando emulador #{emulator_name}..."
+    sh "$ANDROID_HOME/emulator/emulator @#{emulator_name} -no-boot-anim -no-snapshot > /dev/null 2>&1 &"
+
+    puts "⏳ Aguardando o dispositivo estar pronto..."
+    sh "adb wait-for-device"
+    sleep(20)
+  
+    puts "🧹 Limpando pasta de destino..."
+    sh "rm -rf #{destino_prints}/*"
+    sh "mkdir -p #{destino_prints}"
+
+    puts "📸 Tirando screenshots..."
+    sh "cd .. && fvm flutter drive --driver=test_driver/integration_test.dart --target=integration_test/screenshot_test.dart"
+
+    puts "🚚 Movendo arquivos..."
+    sh "mv #{origem_prints}/*.png #{destino_prints}/"
+
+    puts "🔥 Finalizando emulador..."
+    sh "adb emu kill"
+
+    # ============================================
+    # Enviar para a Google Play
+    # ============================================
+    # upload_to_play_store(
+    #   track: "internal",       # Ou 'production', 'alpha', etc.
+    #   skip_upload_apk: true,   # Não queremos subir app agora, só fotos
+    #   skip_upload_aab: true,
+    #   skip_upload_metadata: false,
+    #   skip_upload_images: false
+    # )
+    
+  end
+end
