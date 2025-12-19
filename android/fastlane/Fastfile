@@ -60,7 +60,7 @@ platform :android do
 
     puts "⏳ Aguardando o dispositivo estar pronto..."
     sh "adb wait-for-device"
-    sleep(20)
+    sleep(15)
   
     puts "🧹 Limpando pasta de destino..."
     sh "rm -rf #{destino_prints}/*"
