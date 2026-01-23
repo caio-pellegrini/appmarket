@@ -5,42 +5,42 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000313">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000197">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: $ANDROID_HOME/emulator/emulator @pixel5 -no-boot-anim -no-snapshot &gt; /dev/null 2&gt;&amp;1 &amp;" time="0.007286">
+      <testcase classname="fastlane.lanes" name="1: $ANDROID_HOME/emulator/emulator @pixel5 -no-boot-anim -no-snapshot &gt; /dev/null 2&gt;&amp;1 &amp;" time="0.006046">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: adb wait-for-device" time="9.52685">
+      <testcase classname="fastlane.lanes" name="2: adb wait-for-device" time="8.712906">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: rm -rf /Users/accesys/Music/ProjetosFlutter/appmarket/android/fastlane/metadata/android/pt-BR/images/phoneScreenshots/*" time="0.039798">
+      <testcase classname="fastlane.lanes" name="3: rm -rf /Users/accesys/Music/ProjetosFlutter/appmarket/android/fastlane/metadata/android/pt-BR/images/phoneScreenshots/*" time="0.043562">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: mkdir -p /Users/accesys/Music/ProjetosFlutter/appmarket/android/fastlane/metadata/android/pt-BR/images/phoneScreenshots" time="0.013488">
+      <testcase classname="fastlane.lanes" name="4: mkdir -p /Users/accesys/Music/ProjetosFlutter/appmarket/android/fastlane/metadata/android/pt-BR/images/phoneScreenshots" time="0.011608">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: cd .. &amp;&amp; fvm flutter drive --driver=test_driver/integration_test.dart --target=integration_test/screenshot_test.dart" time="83.988809">
+      <testcase classname="fastlane.lanes" name="5: cd .. &amp;&amp; fvm flutter drive --driver=test_driver/integration_test.dart --target=integration_test/screenshot_test.dart" time="219.982954">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="6: mv /Users/accesys/Music/ProjetosFlutter/appmarket/screenshots/*.png /Users/accesys/Music/ProjetosFlutter/appmarket/android/fastlane/metadata/android/pt-BR/images/phoneScreenshots/" time="0.06706">
+      <testcase classname="fastlane.lanes" name="6: mv /Users/accesys/Music/ProjetosFlutter/appmarket/screenshots/*.png /Users/accesys/Music/ProjetosFlutter/appmarket/android/fastlane/metadata/android/pt-BR/images/phoneScreenshots/" time="0.153674">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="7: adb emu kill" time="0.051653">
+      <testcase classname="fastlane.lanes" name="7: adb emu kill" time="0.053441">
         
       </testcase>
     
