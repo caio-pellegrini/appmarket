@@ -46,3 +46,11 @@ app.*.map.json
 
 # FVM Version Cache
 .fvm/
+
+# Ignorar a pasta temporária do script de teste
+/screenshots/
+
+# Ignorar as imagens dentro da pasta do Fastlane (mas manter os textos!)
+android/fastlane/metadata/**/*.png
+android/fastlane/metadata/**/*.jpg
+android/fastlane/metadata/**/*.jpeg

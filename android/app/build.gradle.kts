@@ -8,7 +8,8 @@ plugins {
 android {
     namespace = "com.example.appmarket"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    // TODO: Change back to flutter.ndkVersion when updating to a newer Flutter version
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -41,4 +42,8 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    androidTestImplementation("tools.fastlane:screengrab:2.1.1")
 }
